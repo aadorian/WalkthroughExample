@@ -81,7 +81,7 @@ The extension covers 15 weeks of study:
    - Systems, software, lifecycle, pseudocode
 
 2. **Variables y Expresiones** (Week 2)
-   - Variables, expressions, manual execution
+   - Variables, corrido a mano, expresiones
 
 3. **TypeScript Básico** (Week 3)
    - Types, conversions, operators, control structures
