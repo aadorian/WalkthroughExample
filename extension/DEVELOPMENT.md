@@ -10,6 +10,11 @@ extension/
 │   ├── extension.ts           # Main extension entry point
 │   ├── playgroundPanel.ts     # Webview for the interactive playground
 │   └── moduleTreeProvider.ts  # Tree view for course modules
+├── modules/
+│   ├── 01-fundamentos.md
+│   ├── 02-variables-y-expresiones.md
+│   ├── ...
+│   └── 11-ejercicios-integradores.md
 ├── webview-ui/
 │   ├── playground.js          # Webview script
 │   └── playground.css         # Webview styles

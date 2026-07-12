@@ -171,6 +171,7 @@ class ModuleItem extends vscode.TreeItem {
           vscode.Uri.joinPath(
             vscode.workspace.workspaceFolders?.[0].uri ||
               vscode.Uri.file("/Users/user/Desktop/files"),
+            "extension/modules",
             filePath
           ).fsPath,
         ],
