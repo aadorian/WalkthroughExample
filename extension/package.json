@@ -23,11 +23,7 @@
     "education",
     "tutorial"
   ],
-  "activationEvents": [
-    "onCommand:programacion-ts.openPlayground",
-    "onCommand:programacion-ts.startWalkthrough",
-    "onView:programacionTsExplorer"
-  ],
+  "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -73,92 +69,77 @@
     "walkthroughs": [
       {
         "id": "programacion-ts.getting-started",
-        "title": "TypeScript Programming - Getting Started",
-        "description": "Learn Object-Oriented Programming with TypeScript. A 15-week interactive course.",
+        "title": "Learn TypeScript Programming",
+        "description": "Object-Oriented Programming from scratch with TypeScript — a 15-week guided course.",
         "steps": [
           {
             "id": "setup",
-            "title": "Setup Your Environment",
-            "description": "Install Node.js and the tsx runtime to execute TypeScript examples",
+            "title": "Set up your environment",
+            "description": "Every example in the course runs with the **tsx** runtime.\nOpen a terminal and run: ``npm install -g tsx``\n[Open a Terminal](command:workbench.action.terminal.new)",
             "media": {
-              "image": "media/step-setup.svg",
-              "altText": "Setup environment with Node.js and tsx"
+              "svg": "media/step-setup.svg",
+              "altText": "Terminal showing the command npm install -g tsx"
+            },
+            "completionEvents": [
+              "onCommand:workbench.action.terminal.new"
+            ]
+          },
+          {
+            "id": "fundamentals",
+            "title": "Learn the fundamentals",
+            "description": "Week 1 — understand what a program is, design solutions step by step, and write pseudocode before touching the keyboard.\n[Open Module 1: Fundamentos](command:programacion-ts.openModule?%5B%2201-fundamentos.md%22%5D)",
+            "media": {
+              "svg": "media/step-fundamentals.svg",
+              "altText": "Diagram showing the flow from problem to algorithm to program"
+            }
+          },
+          {
+            "id": "variables",
+            "title": "Variables and expressions",
+            "description": "Weeks 2-3 — declare variables, work with types and expressions, then try them live in the interactive playground.\n[Open Module 2: Variables](command:programacion-ts.openModule?%5B%2202-variables-y-expresiones.md%22%5D)\n[Try the Playground](command:programacion-ts.openPlayground)",
+            "media": {
+              "svg": "media/step-variables.svg",
+              "altText": "TypeScript code declaring typed variables"
             },
             "completionEvents": [
               "onCommand:programacion-ts.openPlayground"
             ]
           },
           {
-            "id": "fundamentals",
-            "title": "Learn the Fundamentals",
-            "description": "Understand what programming is, how to design solutions, and write pseudocode",
-            "media": {
-              "image": "media/step-fundamentals.svg",
-              "altText": "Fundamentals: systems, algorithms, and design"
-            },
-            "completionEvents": [
-              "onCommand:programacion-ts.openModule"
-            ]
-          },
-          {
-            "id": "variables",
-            "title": "Variables and Expressions",
-            "description": "Master TypeScript variables, types, and expressions. Run your first program.",
-            "media": {
-              "image": "media/step-variables.svg",
-              "altText": "Variables, types, and expressions in TypeScript"
-            },
-            "completionEvents": [
-              "onCommand:programacion-ts.runExample"
-            ]
-          },
-          {
             "id": "oop",
-            "title": "Object-Oriented Programming",
-            "description": "Learn classes, objects, encapsulation, and the principles of OOP design",
+            "title": "Classes and objects",
+            "description": "Weeks 4-5 — model the real world with classes: encapsulation, constructors, getters and setters, and UML diagrams.\n[Open Module 4: Clases y objetos](command:programacion-ts.openModule?%5B%2204-clases-y-objetos.md%22%5D)",
             "media": {
-              "image": "media/step-oop.svg",
-              "altText": "Classes, objects, and OOP principles with UML"
-            },
-            "completionEvents": [
-              "onCommand:programacion-ts.openModule"
-            ]
+              "svg": "media/step-oop.svg",
+              "altText": "UML class diagram of the class Persona"
+            }
           },
           {
             "id": "inheritance",
-            "title": "Inheritance and Polymorphism",
-            "description": "Explore advanced OOP: inheritance, abstract classes, and polymorphic behavior",
+            "title": "Inheritance and polymorphism",
+            "description": "Weeks 8-9 — build class hierarchies with abstract classes and let polymorphism do the work.\n[Open Module 6: Herencia](command:programacion-ts.openModule?%5B%2206-herencia-y-polimorfismo.md%22%5D)",
             "media": {
-              "image": "media/step-inheritance.svg",
-              "altText": "Inheritance and polymorphism in TypeScript"
-            },
-            "completionEvents": [
-              "onCommand:programacion-ts.runExample"
-            ]
+              "svg": "media/step-inheritance.svg",
+              "altText": "UML hierarchy showing Gerente and Vendedor extending Empleado"
+            }
           },
           {
             "id": "collections",
-            "title": "Collections and Data Structures",
-            "description": "Work with arrays, lists, and maps to manage groups of data",
+            "title": "Collections and arrays",
+            "description": "Weeks 9-11 — manage groups of objects with dynamic lists, fixed-size arrays, and maps.\n[Open Module 7: Colecciones](command:programacion-ts.openModule?%5B%2207-colecciones.md%22%5D)",
             "media": {
-              "image": "media/step-collections.svg",
-              "altText": "Collections: arrays, lists, and maps"
-            },
-            "completionEvents": [
-              "onCommand:programacion-ts.runExample"
-            ]
+              "svg": "media/step-collections.svg",
+              "altText": "Array cells with indexes next to a list of items"
+            }
           },
           {
             "id": "capstone",
-            "title": "Build Your Capstone Project",
-            "description": "Apply everything you've learned to solve real-world problems with design patterns",
+            "title": "Build the capstone project",
+            "description": "Weeks 12-15 — combine everything: exceptions, searching, sorting, and complete applications designed from UML to code.\n[Open Module 9: Caso integrador](command:programacion-ts.openModule?%5B%2209-caso-integrador.md%22%5D)\n[Open Module 11: Ejercicios](command:programacion-ts.openModule?%5B%2211-ejercicios-integradores.md%22%5D)",
             "media": {
-              "image": "media/step-capstone.svg",
-              "altText": "Capstone project integrating all concepts"
-            },
-            "completionEvents": [
-              "onCommand:programacion-ts.runExample"
-            ]
+              "svg": "media/step-capstone.svg",
+              "altText": "Checklist of completed course concepts leading to a finished project"
+            }
           }
         ]
       }

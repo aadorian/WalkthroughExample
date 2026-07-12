@@ -1,59 +1,32 @@
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      .bg { fill: #ffffff; }
-      @media (prefers-color-scheme: dark) {
-        .bg { fill: #1e1e1e; }
-      }
-      .text-primary { fill: #333; }
-      @media (prefers-color-scheme: dark) {
-        .text-primary { fill: #e0e0e0; }
-      }
-      .text-secondary { fill: #666; }
-      @media (prefers-color-scheme: dark) {
-        .text-secondary { fill: #a0a0a0; }
-      }
-      .uml-box { stroke: #0078d4; stroke-width: 2; fill: none; }
-    </style>
-  </defs>
+<svg viewBox="0 0 400 300" width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .fg { fill: var(--vscode-foreground, #cccccc); }
+    .accent { fill: var(--vscode-textLink-foreground, #3794ff); }
+    .muted { fill: var(--vscode-descriptionForeground, #999999); }
+    .panel { fill: var(--vscode-textCodeBlock-background, rgba(128, 128, 128, 0.15)); }
+    .frame { stroke: var(--vscode-textLink-foreground, #3794ff); fill: none; }
+    .arrow { stroke: var(--vscode-foreground, #cccccc); fill: none; }
+    .head { fill: none; stroke: var(--vscode-foreground, #cccccc); }
+    .ui { font-family: var(--vscode-font-family, sans-serif); }
+  </style>
 
-  <rect class="bg" width="400" height="300"/>
+  <!-- Base class (abstract) -->
+  <rect class="panel frame" x="140" y="35" width="120" height="42" rx="4" stroke-width="1.5"/>
+  <text class="ui accent" x="200" y="61" text-anchor="middle" font-size="14" font-weight="700" font-style="italic">Empleado</text>
 
-  <!-- Title -->
-  <text class="text-primary" x="200" y="35" text-anchor="middle" font-size="16" font-weight="bold">Inheritance & Polymorphism</text>
+  <!-- Inheritance arrows (hollow triangle = UML generalization) -->
+  <path class="arrow" d="M120 170 L 185 92" stroke-width="1.5"/>
+  <path class="arrow" d="M280 170 L 215 92" stroke-width="1.5"/>
+  <path class="head" d="M178 96 l 10 -12 l 6 14 z" stroke-width="1.5"/>
+  <path class="head" d="M222 96 l -10 -12 l -6 14 z" stroke-width="1.5"/>
 
-  <!-- Parent class -->
-  <rect class="uml-box" x="120" y="60" width="160" height="70" rx="4"/>
-  <text class="text-primary" x="200" y="82" text-anchor="middle" font-size="12" font-weight="bold">Vehículo (Parent)</text>
-  <line x1="120" y1="95" x2="280" y2="95" class="uml-box" stroke-width="1"/>
-  <text class="text-secondary" x="130" y="110" font-size="10">- velocidad: number</text>
-  <text class="text-secondary" x="130" y="125" font-size="10">+ acelerar(): void</text>
+  <!-- Subclasses -->
+  <rect class="panel frame" x="55" y="170" width="130" height="42" rx="4" stroke-width="1.5"/>
+  <text class="ui fg" x="120" y="196" text-anchor="middle" font-size="14" font-weight="600">Gerente</text>
 
-  <!-- Arrows pointing down -->
-  <path d="M 150 130 L 120 160" stroke="#0078d4" stroke-width="2" fill="none"/>
-  <path d="M 250 130 L 280 160" stroke="#0078d4" stroke-width="2" fill="none"/>
+  <rect class="panel frame" x="215" y="170" width="130" height="42" rx="4" stroke-width="1.5"/>
+  <text class="ui fg" x="280" y="196" text-anchor="middle" font-size="14" font-weight="600">Vendedor</text>
 
-  <!-- Triangle arrowheads (inheritance) -->
-  <polygon points="120,160 125,172 115,172" fill="#0078d4"/>
-  <polygon points="280,160 285,172 275,172" fill="#0078d4"/>
-
-  <!-- Child class 1 -->
-  <rect class="uml-box" x="60" y="160" width="120" height="70" rx="4"/>
-  <text class="text-primary" x="120" y="182" text-anchor="middle" font-size="11" font-weight="bold">Coche</text>
-  <line x1="60" y1="195" x2="180" y2="195" class="uml-box" stroke-width="1"/>
-  <text class="text-secondary" x="70" y="210" font-size="9">+ abrirCajon()</text>
-  <text class="text-secondary" x="70" y="223" font-size="9">+ acelerar() *</text>
-
-  <!-- Child class 2 -->
-  <rect class="uml-box" x="220" y="160" width="120" height="70" rx="4"/>
-  <text class="text-primary" x="280" y="182" text-anchor="middle" font-size="11" font-weight="bold">Bicicleta</text>
-  <line x1="220" y1="195" x2="340" y2="195" class="uml-box" stroke-width="1"/>
-  <text class="text-secondary" x="230" y="210" font-size="9">+ cambiarMarca()</text>
-  <text class="text-secondary" x="230" y="223" font-size="9">+ acelerar() *</text>
-
-  <!-- Polymorphism example -->
-  <rect x="20" y="250" width="360" height="40" fill="none" stroke="#0078d4" stroke-width="1" rx="2"/>
-  <text class="text-primary" x="30" y="267" font-size="10" font-weight="bold">Polymorphism:</text>
-  <text class="text-secondary" x="180" y="267" font-size="9">Same method, different behavior</text>
-  <text class="text-secondary" x="30" y="283" font-size="8" font-family="monospace">coche.acelerar() vs bicicleta.acelerar()</text>
+  <text class="ui muted" x="200" y="240" text-anchor="middle" font-size="12">cada uno redefine getSueldo()</text>
+  <text class="ui fg" x="200" y="272" text-anchor="middle" font-size="14" font-weight="600">One interface, many behaviors</text>
 </svg>

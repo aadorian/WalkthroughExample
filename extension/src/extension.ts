@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import * as path from "path";
 import { PlaygroundPanel } from "./playgroundPanel";
 import { ModuleTreeProvider } from "./moduleTreeProvider";
 
@@ -49,13 +50,19 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   // Command: Open Module
+  // Accepts either a bundled module filename (e.g. "01-fundamentos.md")
+  // or an absolute path; bundled names resolve inside the extension.
   const openModuleCommand = vscode.commands.registerCommand(
     "programacion-ts.openModule",
     async (modulePath?: string) => {
-      if (modulePath) {
-        const doc = await vscode.workspace.openTextDocument(modulePath);
-        await vscode.window.showTextDocument(doc);
+      if (!modulePath) {
+        return;
       }
+      const uri = path.isAbsolute(modulePath)
+        ? vscode.Uri.file(modulePath)
+        : vscode.Uri.joinPath(context.extensionUri, "modules", modulePath);
+      const doc = await vscode.workspace.openTextDocument(uri);
+      await vscode.window.showTextDocument(doc);
     }
   );
 
@@ -72,10 +79,16 @@ export function activate(context: vscode.ExtensionContext) {
   );
   if (!hasShown) {
     context.globalState.update("programacion-ts.welcomeShown", true);
-    vscode.window.showInformationMessage(
-      "Welcome to TypeScript Programming! Start the learning guide to begin.",
-      "Start Learning"
-    );
+    Promise.resolve(
+      vscode.window.showInformationMessage(
+        "Welcome to TypeScript Programming! Start the learning guide to begin.",
+        "Start Learning"
+      )
+    ).then((selection) => {
+      if (selection === "Start Learning") {
+        vscode.commands.executeCommand("programacion-ts.startWalkthrough");
+      }
+    });
   }
 }
 

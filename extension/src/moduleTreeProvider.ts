@@ -1,6 +1,4 @@
 import * as vscode from "vscode";
-import * as path from "path";
-import * as fs from "fs";
 
 interface Module {
   id: number;
@@ -167,14 +165,7 @@ class ModuleItem extends vscode.TreeItem {
       this.command = {
         command: "programacion-ts.openModule",
         title: "Open Module",
-        arguments: [
-          vscode.Uri.joinPath(
-            vscode.workspace.workspaceFolders?.[0].uri ||
-              vscode.Uri.file("/Users/user/Desktop/files"),
-            "extension/modules",
-            filePath
-          ).fsPath,
-        ],
+        arguments: [filePath],
       };
     } else {
       this.iconPath = new vscode.ThemeIcon("circle-outline");

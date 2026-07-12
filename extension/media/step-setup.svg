@@ -1,47 +1,31 @@
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      :root[data-theme="dark"] .bg { fill: #1e1e1e; }
-      :root[data-theme="light"] .bg { fill: #ffffff; }
-      .bg { fill: #ffffff; }
-      @media (prefers-color-scheme: dark) {
-        .bg { fill: #1e1e1e; }
-      }
-      .text-primary { fill: #333; }
-      @media (prefers-color-scheme: dark) {
-        .text-primary { fill: #e0e0e0; }
-      }
-      .text-accent { fill: #0078d4; }
-      .icon-circle { stroke: #0078d4; stroke-width: 2; fill: none; }
-      .check-mark { fill: #107c10; }
-    </style>
-  </defs>
+<svg viewBox="0 0 400 300" width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .fg { fill: var(--vscode-foreground, #cccccc); }
+    .accent { fill: var(--vscode-textLink-foreground, #3794ff); }
+    .ok { fill: var(--vscode-charts-green, #89d185); }
+    .muted { fill: var(--vscode-descriptionForeground, #999999); }
+    .panel { fill: var(--vscode-textCodeBlock-background, rgba(128, 128, 128, 0.15)); }
+    .frame { stroke: var(--vscode-widget-border, rgba(128, 128, 128, 0.35)); fill: none; }
+    .code { font-family: var(--vscode-editor-font-family, "SF Mono", Monaco, Consolas, monospace); font-size: 13px; }
+    .ui { font-family: var(--vscode-font-family, sans-serif); }
+  </style>
 
-  <rect class="bg" width="400" height="300"/>
+  <!-- Terminal window -->
+  <rect class="panel" x="30" y="50" width="340" height="200" rx="8"/>
+  <rect class="frame" x="30" y="50" width="340" height="200" rx="8" stroke-width="1.5"/>
 
-  <!-- Node.js Logo Area -->
-  <circle class="icon-circle" cx="80" cy="80" r="40"/>
-  <text class="text-primary" x="80" y="90" text-anchor="middle" font-size="24" font-weight="bold">Node</text>
-  <circle cx="75" cy="125" r="5" class="check-mark"/>
+  <!-- Title bar -->
+  <line x1="30" y1="82" x2="370" y2="82" stroke="var(--vscode-widget-border, rgba(128, 128, 128, 0.35))" stroke-width="1.5"/>
+  <circle cx="52" cy="66" r="5" class="muted"/>
+  <circle cx="70" cy="66" r="5" class="muted"/>
+  <circle cx="88" cy="66" r="5" class="muted"/>
+  <text class="ui muted" x="200" y="71" text-anchor="middle" font-size="12">Terminal</text>
 
-  <!-- Terminal/CLI Area -->
-  <circle class="icon-circle" cx="200" cy="80" r="40"/>
-  <rect x="175" y="55" width="50" height="40" fill="none" stroke="#0078d4" stroke-width="2" rx="2"/>
-  <line x1="180" y1="70" x2="220" y2="70" stroke="#0078d4" stroke-width="2"/>
-  <line x1="180" y1="80" x2="210" y2="80" stroke="#0078d4" stroke-width="2"/>
-  <circle cx="195" cy="125" r="5" class="check-mark"/>
+  <!-- Session -->
+  <text class="code accent" x="50" y="115">$ <tspan class="fg">npm install -g tsx</tspan></text>
+  <text class="code ok" x="50" y="145">✓ added 1 package</text>
+  <text class="code accent" x="50" y="185">$ <tspan class="fg">tsx ejemplo.ts</tspan></text>
+  <text class="code muted" x="50" y="215">¡Hola, TypeScript!</text>
 
-  <!-- tsx Installation Area -->
-  <circle class="icon-circle" cx="320" cy="80" r="40"/>
-  <text class="text-primary" x="320" y="95" text-anchor="middle" font-size="18" font-weight="bold">tsx</text>
-  <circle cx="315" cy="125" r="5" class="check-mark"/>
-
-  <!-- Installation Command -->
-  <rect x="20" y="170" width="360" height="60" fill="none" stroke="#0078d4" stroke-width="2" rx="4"/>
-  <text class="text-primary" x="30" y="190" font-size="12" font-family="monospace">npm install -g tsx</text>
-  <text class="text-primary" x="30" y="210" font-size="11" font-weight="500">Then run your TypeScript files:</text>
-  <text class="text-accent" x="30" y="225" font-size="11" font-family="monospace">tsx example.ts</text>
-
-  <!-- Title -->
-  <text class="text-primary" x="200" y="35" text-anchor="middle" font-size="16" font-weight="bold">Setup Your Environment</text>
+  <text class="ui fg" x="200" y="285" text-anchor="middle" font-size="14" font-weight="600">One install, every example runs</text>
 </svg>

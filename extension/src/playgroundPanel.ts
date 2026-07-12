@@ -1,4 +1,6 @@
 import * as vscode from "vscode";
+import * as fs from "fs";
+import * as os from "os";
 import * as path from "path";
 
 export class PlaygroundPanel {
@@ -156,15 +158,16 @@ console.log("Hello, TypeScript!");
   }
 
   private _runTypeScriptCode(code: string) {
-    // Create a temporary file and run it with tsx
+    // Quoting arbitrary code for the shell is not safe; write it to a
+    // temp file and let tsx run the file instead.
+    const file = path.join(os.tmpdir(), "programacion-ts-playground.ts");
+    fs.writeFileSync(file, code, "utf8");
+
     const terminal =
       vscode.window.activeTerminal ||
       vscode.window.createTerminal("TypeScript Playground");
     terminal.show();
-
-    // We'll send the command to run tsx with the code
-    // In a real implementation, we'd write to a temp file first
-    terminal.sendText(`echo '${code}' | tsx`);
+    terminal.sendText(`tsx "${file}"`);
   }
 }
 
