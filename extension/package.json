@@ -1,0 +1,192 @@
+{
+  "name": "programacion-ts-playground",
+  "displayName": "TypeScript Programming Playground",
+  "description": "Interactive walkthrough and playground for learning TypeScript with object-oriented programming",
+  "version": "0.1.0",
+  "publisher": "ort-edu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ort-edu/programacion-ts-playground"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Education",
+    "Notebooks",
+    "Other"
+  ],
+  "keywords": [
+    "typescript",
+    "programming",
+    "oop",
+    "education",
+    "tutorial"
+  ],
+  "activationEvents": [
+    "onCommand:programacion-ts.openPlayground",
+    "onCommand:programacion-ts.startWalkthrough",
+    "onView:programacionTsExplorer"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "programacion-ts.openPlayground",
+        "title": "Open Playground",
+        "category": "TypeScript Programming"
+      },
+      {
+        "command": "programacion-ts.startWalkthrough",
+        "title": "Start Learning Guide",
+        "category": "TypeScript Programming"
+      },
+      {
+        "command": "programacion-ts.runExample",
+        "title": "Run Example",
+        "category": "TypeScript Programming"
+      },
+      {
+        "command": "programacion-ts.openModule",
+        "title": "Open Module",
+        "category": "TypeScript Programming"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "programacion-ts-explorer",
+          "title": "TypeScript Programming",
+          "icon": "media/sidebar-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "programacion-ts-explorer": [
+        {
+          "id": "programacionTsExplorer",
+          "name": "Learning Modules",
+          "type": "tree"
+        }
+      ]
+    },
+    "walkthroughs": [
+      {
+        "id": "programacion-ts.getting-started",
+        "title": "TypeScript Programming - Getting Started",
+        "description": "Learn Object-Oriented Programming with TypeScript. A 15-week interactive course.",
+        "steps": [
+          {
+            "id": "setup",
+            "title": "Setup Your Environment",
+            "description": "Install Node.js and the tsx runtime to execute TypeScript examples",
+            "media": {
+              "image": "media/step-setup.svg",
+              "altText": "Setup environment with Node.js and tsx"
+            },
+            "completionEvents": [
+              "onCommand:programacion-ts.openPlayground"
+            ]
+          },
+          {
+            "id": "fundamentals",
+            "title": "Learn the Fundamentals",
+            "description": "Understand what programming is, how to design solutions, and write pseudocode",
+            "media": {
+              "image": "media/step-fundamentals.svg",
+              "altText": "Fundamentals: systems, algorithms, and design"
+            },
+            "completionEvents": [
+              "onCommand:programacion-ts.openModule"
+            ]
+          },
+          {
+            "id": "variables",
+            "title": "Variables and Expressions",
+            "description": "Master TypeScript variables, types, and expressions. Run your first program.",
+            "media": {
+              "image": "media/step-variables.svg",
+              "altText": "Variables, types, and expressions in TypeScript"
+            },
+            "completionEvents": [
+              "onCommand:programacion-ts.runExample"
+            ]
+          },
+          {
+            "id": "oop",
+            "title": "Object-Oriented Programming",
+            "description": "Learn classes, objects, encapsulation, and the principles of OOP design",
+            "media": {
+              "image": "media/step-oop.svg",
+              "altText": "Classes, objects, and OOP principles with UML"
+            },
+            "completionEvents": [
+              "onCommand:programacion-ts.openModule"
+            ]
+          },
+          {
+            "id": "inheritance",
+            "title": "Inheritance and Polymorphism",
+            "description": "Explore advanced OOP: inheritance, abstract classes, and polymorphic behavior",
+            "media": {
+              "image": "media/step-inheritance.svg",
+              "altText": "Inheritance and polymorphism in TypeScript"
+            },
+            "completionEvents": [
+              "onCommand:programacion-ts.runExample"
+            ]
+          },
+          {
+            "id": "collections",
+            "title": "Collections and Data Structures",
+            "description": "Work with arrays, lists, and maps to manage groups of data",
+            "media": {
+              "image": "media/step-collections.svg",
+              "altText": "Collections: arrays, lists, and maps"
+            },
+            "completionEvents": [
+              "onCommand:programacion-ts.runExample"
+            ]
+          },
+          {
+            "id": "capstone",
+            "title": "Build Your Capstone Project",
+            "description": "Apply everything you've learned to solve real-world problems with design patterns",
+            "media": {
+              "image": "media/step-capstone.svg",
+              "altText": "Capstone project integrating all concepts"
+            },
+            "completionEvents": [
+              "onCommand:programacion-ts.runExample"
+            ]
+          }
+        ]
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "programacion-ts.startWalkthrough",
+          "when": "view == programacionTsExplorer",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --platform=node --target=node16",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test": "node ./out/test/runTest.js",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.75.0",
+    "esbuild": "^0.17.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {}
+}

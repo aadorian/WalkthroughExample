@@ -1,0 +1,66 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #1e1e1e; }
+      }
+      .text-primary { fill: #333; }
+      @media (prefers-color-scheme: dark) {
+        .text-primary { fill: #e0e0e0; }
+      }
+      .text-secondary { fill: #666; }
+      @media (prefers-color-scheme: dark) {
+        .text-secondary { fill: #a0a0a0; }
+      }
+      .uml-box { stroke: #0078d4; stroke-width: 2; fill: none; }
+      .uml-sep { stroke: #0078d4; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="400" height="300"/>
+
+  <!-- Title -->
+  <text class="text-primary" x="200" y="35" text-anchor="middle" font-size="16" font-weight="bold">Object-Oriented Programming (OOP)</text>
+
+  <!-- UML Class Diagram -->
+  <rect class="uml-box" x="70" y="60" width="140" height="120" rx="4"/>
+
+  <!-- Class name -->
+  <line x1="70" y1="90" x2="210" y2="90" class="uml-sep"/>
+  <text class="text-primary" x="140" y="82" text-anchor="middle" font-size="13" font-weight="bold">Persona</text>
+
+  <!-- Attributes -->
+  <line x1="70" y1="135" x2="210" y2="135" class="uml-sep"/>
+  <text class="text-secondary" x="80" y="105" font-size="10">- nombre: string</text>
+  <text class="text-secondary" x="80" y="120" font-size="10">- edad: number</text>
+
+  <!-- Methods -->
+  <text class="text-secondary" x="80" y="150" font-size="10">+ saludar(): void</text>
+  <text class="text-secondary" x="80" y="165" font-size="10">+ getEdad(): number</text>
+
+  <!-- Concept boxes -->
+  <rect x="20" y="200" width="85" height="80" fill="none" stroke="#0078d4" stroke-width="1" rx="2"/>
+  <text class="text-primary" x="62" y="220" text-anchor="middle" font-size="11" font-weight="bold">Encapsulation</text>
+  <text class="text-secondary" x="27" y="240" font-size="8">Data is private</text>
+  <text class="text-secondary" x="27" y="253" font-size="8">Access via methods</text>
+  <text class="text-secondary" x="27" y="266" font-size="8">Object protects</text>
+  <text class="text-secondary" x="27" y="279" font-size="8">its own state</text>
+
+  <rect x="120" y="200" width="85" height="80" fill="none" stroke="#0078d4" stroke-width="1" rx="2"/>
+  <text class="text-primary" x="162" y="220" text-anchor="middle" font-size="11" font-weight="bold">Abstraction</text>
+  <text class="text-secondary" x="127" y="240" font-size="8">Expose WHAT</text>
+  <text class="text-secondary" x="127" y="253" font-size="8">it does, not</text>
+  <text class="text-secondary" x="127" y="266" font-size="8">HOW it does it</text>
+  <text class="text-secondary" x="127" y="279" font-size="8">Users don't need</text>
+
+  <rect x="220" y="200" width="85" height="80" fill="none" stroke="#0078d4" stroke-width="1" rx="2"/>
+  <text class="text-primary" x="262" y="220" text-anchor="middle" font-size="11" font-weight="bold">Reusability</text>
+  <text class="text-secondary" x="227" y="240" font-size="8">Well-designed</text>
+  <text class="text-secondary" x="227" y="253" font-size="8">classes are used</text>
+  <text class="text-secondary" x="227" y="266" font-size="8">in many</text>
+  <text class="text-secondary" x="227" y="279" font-size="8">programs</text>
+
+  <!-- Class vs Instance -->
+  <text class="text-secondary" x="20" y="295" font-size="9" font-style="italic">Class = Template | Instance = Actual object</text>
+</svg>

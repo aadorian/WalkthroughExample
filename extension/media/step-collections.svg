@@ -1,0 +1,76 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #1e1e1e; }
+      }
+      .text-primary { fill: #333; }
+      @media (prefers-color-scheme: dark) {
+        .text-primary { fill: #e0e0e0; }
+      }
+      .text-secondary { fill: #666; }
+      @media (prefers-color-scheme: dark) {
+        .text-secondary { fill: #a0a0a0; }
+      }
+      .item-box { stroke: #0078d4; stroke-width: 1; fill: #e3f2fd; }
+      @media (prefers-color-scheme: dark) {
+        .item-box { fill: #1a3a52; }
+      }
+    </style>
+  </defs>
+
+  <rect class="bg" width="400" height="300"/>
+
+  <!-- Title -->
+  <text class="text-primary" x="200" y="35" text-anchor="middle" font-size="16" font-weight="bold">Collections & Data Structures</text>
+
+  <!-- Array Section -->
+  <text class="text-primary" x="20" y="70" font-size="12" font-weight="bold">Array (Fixed Size)</text>
+  <rect class="item-box" x="20" y="80" width="30" height="40"/>
+  <rect class="item-box" x="55" y="80" width="30" height="40"/>
+  <rect class="item-box" x="90" y="80" width="30" height="40"/>
+  <rect class="item-box" x="125" y="80" width="30" height="40"/>
+  <text class="text-secondary" x="55" y="120" font-size="9">[0] [1] [2] [3]</text>
+
+  <!-- List Section -->
+  <text class="text-primary" x="200" y="70" font-size="12" font-weight="bold">List (Dynamic)</text>
+  <circle cx="215" cy="95" r="12" fill="none" stroke="#0078d4" stroke-width="2"/>
+  <text class="text-primary" x="215" y="100" text-anchor="middle" font-size="11" font-weight="bold">A</text>
+  <path d="M 230 95 L 250 95" stroke="#0078d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <circle cx="265" cy="95" r="12" fill="none" stroke="#0078d4" stroke-width="2"/>
+  <text class="text-primary" x="265" y="100" text-anchor="middle" font-size="11" font-weight="bold">B</text>
+  <path d="M 280 95 L 300 95" stroke="#0078d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <circle cx="315" cy="95" r="12" fill="none" stroke="#0078d4" stroke-width="2"/>
+  <text class="text-primary" x="315" y="100" text-anchor="middle" font-size="11" font-weight="bold">C</text>
+  <path d="M 330 95 L 350 95" stroke="#0078d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <circle cx="365" cy="95" r="12" fill="none" stroke="#0078d4" stroke-width="2" stroke-dasharray="4"/>
+  <text class="text-secondary" x="215" y="120" font-size="9">Grows as needed</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0078d4"/>
+    </marker>
+  </defs>
+
+  <!-- Map Section -->
+  <text class="text-primary" x="20" y="165" font-size="12" font-weight="bold">Map (Key-Value)</text>
+  <rect class="item-box" x="20" y="180" width="50" height="35" rx="2"/>
+  <text class="text-secondary" x="25" y="193" font-size="9" font-weight="bold">name</text>
+  <text class="text-secondary" x="25" y="207" font-size="8">"Ana"</text>
+
+  <rect class="item-box" x="80" y="180" width="50" height="35" rx="2"/>
+  <text class="text-secondary" x="85" y="193" font-size="9" font-weight="bold">age</text>
+  <text class="text-secondary" x="85" y="207" font-size="8">25</text>
+
+  <rect class="item-box" x="140" y="180" width="50" height="35" rx="2"/>
+  <text class="text-secondary" x="145" y="193" font-size="9" font-weight="bold">city</text>
+  <text class="text-secondary" x="145" y="207" font-size="8">"Madrid"</text>
+
+  <!-- Use cases -->
+  <text class="text-primary" x="20" y="245" font-size="12" font-weight="bold">When to use:</text>
+  <text class="text-secondary" x="20" y="265" font-size="10">• Array: Known size, direct access by index</text>
+  <text class="text-secondary" x="20" y="280" font-size="10">• List: Variable size, frequent insertions/deletions</text>
+  <text class="text-secondary" x="20" y="295" font-size="10">• Map: Lookup by key, associative data</text>
+</svg>
