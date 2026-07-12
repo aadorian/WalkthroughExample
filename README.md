@@ -1,39 +1,182 @@
-# Programación desde cero con TypeScript
+# TypeScript Programming Playground
 
-Guía de estudio original que cubre el temario de un curso introductorio de programación orientada a objetos (15 semanas), con todos los ejemplos escritos en **TypeScript**.
+## Overview
 
-> **Nota:** este material es una guía original de estudio. Sigue el temario del curso Programación I (ORT), pero el contenido, la redacción y todos los ejemplos de código fueron creados desde cero. Para el material oficial del curso, consultá el libro de la cátedra.
+An interactive VS Code extension and learning platform for the **15-week TypeScript Programming course** based on the **Programación I** curriculum from ORT Universidad.
 
-## Contenido
+## Features
 
-| # | Archivo | Temas | Semanas |
-|---|---------|-------|---------|
-| 1 | [Fundamentos](./01-fundamentos.md) | Sistemas, software, ciclo de vida, seudocódigo, algoritmos | 1 |
-| 2 | [Variables y expresiones](./02-variables-y-expresiones.md) | Variables, corrida a mano, expresiones aritméticas y lógicas | 2 |
-| 3 | [TypeScript básico](./03-typescript-basico.md) | Tipos, conversiones, operadores, estructuras de control | 3 |
-| 4 | [Clases y objetos](./04-clases-y-objetos.md) | POO, UML, constructores, getters/setters, `toString`, `static` | 4–5 |
-| 5 | [Asociación y switch](./05-asociacion-y-switch.md) | Relaciones entre clases, `switch`, ejemplos guiados | 6–7 |
-| 6 | [Herencia y polimorfismo](./06-herencia-y-polimorfismo.md) | Herencia, upcast, clases abstractas, prueba de programas | 8–9 |
-| 7 | [Colecciones](./07-colecciones.md) | Listas dinámicas, agregación, caso Banco | 9–10 |
-| 8 | [Arrays](./08-arrays.md) | Arrays de tamaño fijo, recorridas, punto de entrada | 11 |
-| 9 | [Caso integrador](./09-caso-integrador.md) | Excepciones, búsqueda, ordenación, interfaces | 12 |
-| 10 | [Mapas y orden avanzado](./10-mapas-y-orden.md) | Orden por dos campos, `Map`, `null` y `undefined` | 13 |
-| 11 | [Ejercicios integradores](./11-ejercicios-integradores.md) | Dos casos completos con solución paso a paso | 14–15 |
+### 🚀 Interactive Walkthrough
+A 7-step guided learning guide covering:
 
-## Cómo usar esta guía
+1. **Setup Your Environment** - Install Node.js and tsx
+2. **Learn the Fundamentals** - Understand programming basics
+3. **Variables and Expressions** - Master TypeScript types
+4. **Object-Oriented Programming** - Classes and objects
+5. **Inheritance and Polymorphism** - Advanced OOP concepts
+6. **Collections and Data Structures** - Arrays, lists, and maps
+7. **Build Your Capstone Project** - Apply everything you've learned
 
-1. Leé cada capítulo en orden: cada uno asume los anteriores.
-2. Ejecutá los ejemplos. Con [Node.js](https://nodejs.org) instalado:
+### 🎮 Interactive Playground
+- Write and execute TypeScript code directly in VS Code
+- Quick-start examples for common tasks
+- Real-time feedback
+- Integrated terminal execution
 
+### 📚 Learning Module Explorer
+- Browse all 11 course modules
+- Quick access to each topic
+- Organized by week/difficulty
+- Direct links to module content
+
+## Installation
+
+### VS Code Extension
+
+1. Install the extension from the VS Code Marketplace
+2. Open the extension (look for the TypeScript Programming icon in the sidebar)
+3. Click "Start Learning" or use the command palette: `TypeScript Programming: Start Learning Guide`
+
+### Quick Start
+
+1. **Open the Playground**
+   - Command: `TypeScript Programming: Open Playground`
+   - Or click the Playground button in the sidebar
+
+2. **Choose an Example**
+   - Click any example button (Hello World, Variables, etc.)
+   - The code loads into the editor
+
+3. **Run Your Code**
+   - Click the ▶ Run Code button
+   - Or press Ctrl+Enter (Cmd+Enter on Mac)
+   - Output appears in the integrated terminal
+
+4. **Follow the Walkthrough**
+   - Command: `TypeScript Programming: Start Learning Guide`
+   - Complete each step to unlock the next level
+
+## Course Structure
+
+The extension covers all 15 weeks of the TypeScript Programming course:
+
+| Week | Module | Topics | Key Concepts |
+|------|--------|--------|--------------|
+| 1 | Fundamentos | Systems, software, lifecycle, pseudocode | Design thinking, algorithms |
+| 2 | Variables | Data representation, types | Manual execution, expressions |
+| 3 | TypeScript | Syntax, conversions, control | if/else, loops, functions |
+| 4-5 | Clases | OOP, UML, encapsulation | Classes, constructors, getters/setters |
+| 6-7 | Asociación | Class relationships, switch | Aggregation, dependencies |
+| 8-9 | Herencia | Inheritance, abstract classes | Upcasting, polymorphism |
+| 9-10 | Colecciones | Dynamic lists, aggregation | Array-based, generics |
+| 11 | Arrays | Fixed-size arrays, iteration | Loops, index-based access |
+| 12 | Caso integrador | Exceptions, search, sorting | Error handling, algorithms |
+| 13 | Mapas | Maps, advanced sorting | Key-value pairs, comparators |
+| 14-15 | Ejercicios integradores | Complete projects | Full design-to-implementation cycle |
+
+## Development
+
+### Running the Extension
+
+1. **Install dependencies**
    ```bash
-   npm install -g tsx
-   tsx ejemplo.ts
+   npm install
    ```
 
-3. Resolvé los ejercicios propuestos **antes** de mirar las soluciones.
+2. **Compile TypeScript**
+   ```bash
+   npm run compile
+   ```
 
-## Convenciones
+3. **Watch for changes**
+   ```bash
+   npm run watch
+   ```
 
-- Los bloques de código son TypeScript ejecutable salvo que se indique `// seudocódigo`.
-- Los nombres de dominio están en español (`Camion`, `CuentaCorriente`) y los de la sintaxis en inglés, como en la vida real.
-- `>` **Tip:** los consejos prácticos aparecen así.
+4. **Start debugging**
+   ```bash
+   # Press F5 in VS Code
+   # or: npm run esbuild-watch
+   ```
+
+### Running Code Examples
+
+All TypeScript examples are executable. With Node.js installed:
+
+```bash
+npm install -g tsx
+tsx example.ts
+```
+
+## Files Overview
+
+| File | Description |
+|------|-------------|
+| `README.md` | Project overview and usage guide |
+| `LICENSE` | MIT License for the project |
+| `CODE_OF_CONDUCT.md` | Code of conduct for contributors |
+| `CONTRIBUTING.md` | Guidelines for contributing to the project |
+| `extension/README.md` | Extension-specific documentation |
+| `CLAUDE.md` | Guide for Claude Code interactions with this project |
+
+## Example Code Files
+
+The `extension/src` directory contains the extension's TypeScript source code:
+
+- `extension.ts` - Main extension initialization
+- `playgroundPanel.ts` - Interactive webview for code playground
+- `moduleTreeProvider.ts` - Sidebar tree view with all 11 modules
+
+The `webview-ui` directory contains the web-facing part of the playground:
+
+- `playground.js` - Playground interactivity and event handling
+- `playground.css` - Responsive, theme-aware styling
+
+The `extension/media` directory contains walkthrough images:
+
+- `step-*.svg` - SVG graphics for each walkthrough step
+
+## Contributing
+
+We welcome contributions! Please:
+
+1. **Check open issues** or create new ones
+2. **Follow the code style** and conventions in the codebase
+3. **Write clear commit messages** using conventional commits
+4. **Test your changes** thoroughly
+5. **Update documentation** as needed
+
+See `CONTRIBUTING.md` for detailed contributing guidelines.
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE.md` for details.
+
+## Acknowledgements
+
+This project is based on the "Programación desde cero con TypeScript" curriculum from ORT Universidad. All course material and examples were created from scratch to teach Object-Oriented Programming with TypeScript.
+
+## Support
+
+If you encounter issues or have questions:
+
+1. **Check the documentation** in each module
+2. **Run the examples** to understand the concepts
+3. **Use the playground** to experiment with code
+4. **Follow the walkthrough** step by step
+
+> **Remember:** Programming is a skill best learned by doing! Use the playground to experiment with every concept before moving on. The best way to learn is to write code and see it work.
+
+## Quick Links
+
+- [TypeScript Programming Extension] - Install from marketplace
+- [Playing with TypeScript] - Learn from interactive examples
+- [Course Modules] - Browse all 11 modules
+- [Learning Guide] - Step-by-step tutorial
+- [GitHub Repository] - View source code and contribute
+
+[TypeScript Programming Extension]: https://marketplace.visualstudio.com/items?itemName=ort-edu.programacion-ts-playground
+[Playing with TypeScript]: https://marketplace.visualstudio.com/items?itemName=ort-edu.programacion-ts-playground
+[Course Modules]: https://marketplace.visualstudio.com/items?itemName=ort-edu.programacion-ts-playground
+[Learning Guide]: https://marketplace.visualstudio.com/items?itemName=ort-edu.programacion-ts-playground
+[GitHub Repository]: https://github.com/aadorian/WalkthroughExample

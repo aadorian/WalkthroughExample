@@ -1,0 +1,246 @@
+# Created by gitignore
+
+# Build directories
+dist/
+extension/node_modules
+extension/dist
+
+# Log files
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE files
+.vscode
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store_
+._DS_Store
+
+doc/
+*.db
+*.sqlite
+
+# Python files
+*.pyc
+*.pyo
+__pycache__
+
+# Node.js files
+package-lock.json
+.node_modules
+*.log
+
+# Temporary backup files
+*~*
+
+# Editor temporary files
+*.bak
+*.orig
+
+# Project-specific
+*.env.*
+.env
+.env.example
+
+# Cache files
+.cache
+
+# Coverage
+coverage
+
+# Build
+build
+
+# Dist
+lib
+
+# Uploaded files
+*.tar
+*.tar.gz
+*.tgz
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Dependency directories
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Data
+tmp/
+data/
+
+# Xcode
+*.xcuserdata
+*.xccoveragerc
+
+# Coverage
+*.coverage
+*.coverage.*
+
+# Poetry files
+poetry.lock
+*.poetry.toml
+
+# Pipenv
+Pipfile.lock
+
+# Environment
+.venv
+venv
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs to package
+*.dylib
+
+# Coverage directory used by many tests
+coverage/
+
+# Temporary and temporary directories
+tmp/
+*.tmp
+
+# Build outputs
+*.log
+dist/
+
+# Eclipse
+*.swp
+*/tmp/
+*.sublime-*'
+
+# Sublime Text
+tmp/
+
+# Vagrant
+tarball.zip
+
+# NPM
+$(lock*)
+
+# Yarn
+.yarn/install/
+.yarn/checkout/
+.yarn/cache/
+
+# Mocha
+*_output*
+
+# Babel output
+code
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg
+MANIFEST
+
+# Pycharm
+.idea
+*.iml
+
+# Eclipse
+.project
+.classpath
+
+# Visual Studio
+.vs
+.vscode/
+!*.code-workspace
+*.code-workspace
+
+# VS Code
+.DS_Store
+tmp/
+*.swp
+
+# Temporary files
+*.tmp
+*.temp
+
+# Compiled languages
+*.pyc
+*.pyo
+__pycache__/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+
+# Runtime data
+pids/
+logs/
+*.log
+
+# Directory for instrumented libs to package
+*.dylib
+
+# Coverage directory used by many tests
+tmp/coverage/
+
+# Compiled Python files
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+venv/
+*.egg-info/
+
+# Local development environments
+.env
+.env.local
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Git
+.git-credentials
+.gitconfig
