@@ -61,14 +61,50 @@ export class PlaygroundPanel {
           case "alert":
             vscode.window.showInformationMessage(message.text);
             return;
-          case "runCode":
-            this._runTypeScriptCode(message.code);
-            return;
-        }
+      case "runCode":
+        this._runTypeScriptCode(message.code);
+        return;
+      case "executeCode":
+        const output = await this._executeCodeAndGetOutput(message.code);
+        this._panel.webview.postMessage({
+          command: "outputResult",
+          text: output
+        });
+        return;
+    }
       },
       null,
       this._disposables
     );
+  }
+
+  private async _executeCodeAndGetOutput(code: string): Promise<string> {
+    const file = path.join(os.tmpdir(), "programacion-ts-playground.ts");
+    fs.writeFileSync(file, code, "utf8");
+    
+    try {
+      const result = await this._runCodeInTerminal(file);
+      const cleanCode = code.replace(/`/g, "\\``").replace(/\\/g, "\\\\");
+      return ````tsx\n${cleanCode}\n````\n\n**Output:**\n\n${result}`;
+    } catch (error: any) {
+      return ````tsx\n${code}\n````\n\n**Error:**\n\n${error.message}`;
+    }
+  }
+
+  private async _runCodeInTerminal(filePath: string): Promise<string> {
+    const terminal =
+      vscode.window.activeTerminal ||
+      vscode.window.createTerminal("TypeScript Playground");
+    terminal.show();
+    terminal.sendText(`tsx "${filePath}");
+    
+    // Wait for execution to complete and capture output
+    await this._waitForTerminalOutput();
+    return ""; // TODO: Capture actual output from terminal
+  }
+
+  private async _waitForTerminalOutput(): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, 1000));
   }
 
   public dispose() {
@@ -167,7 +203,15 @@ console.log("Hello, TypeScript!");
       vscode.window.activeTerminal ||
       vscode.window.createTerminal("TypeScript Playground");
     terminal.show();
-    terminal.sendText(`tsx "${file}"`);
+    terminal.sendText(`tsx "${file}");
+
+    // Show results in the webview if it exists
+    if (PlaygroundPanel.currentPanel) {
+      PlaygroundPanel.currentPanel._panel.webview.postMessage({
+        command: "showOutput",
+        text: "Ejecutando código... Ver terminal para output completo"
+      });
+    }
   }
 }
 
