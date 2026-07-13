@@ -1,6 +1,5 @@
 import * as vscode from "vscode";
 import * as path from "path";
-import { PlaygroundPanel } from "./playgroundPanel";
 import { ModuleTreeProvider } from "./moduleTreeProvider";
 
 export function activate(context: vscode.ExtensionContext) {
@@ -13,13 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
     moduleTreeProvider
   );
 
-  // Command: Open Playground
-  const openPlaygroundCommand = vscode.commands.registerCommand(
-    "programacion-ts.openPlayground",
-    () => {
-      PlaygroundPanel.createOrShow(context.extensionUri);
-    }
-  );
+
 
   // Command: Start Walkthrough
   const startWalkthroughCommand = vscode.commands.registerCommand(
@@ -67,7 +60,6 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(
-    openPlaygroundCommand,
     startWalkthroughCommand,
     runExampleCommand,
     openModuleCommand
